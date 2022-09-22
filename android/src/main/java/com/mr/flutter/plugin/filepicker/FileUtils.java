@@ -126,7 +126,7 @@ public class FileUtils {
         }
     }
 
-    public static FileInfo openFileStream(final Context context, final Uri uri, boolean withData) {
+    public static FileInfo openFileStream(final Context context, final Uri uri, boolean withData, long maxSize) {
 
         FileOutputStream fos = null;
         String path = getPath(uri, context);
@@ -177,7 +177,7 @@ public class FileUtils {
 
         }
 
-        if (withData) {
+        if (withData && file.length()< maxSize ) {
             loadData(file, fileInfo);
         }
 

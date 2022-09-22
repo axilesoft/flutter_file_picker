@@ -30,6 +30,7 @@ class FilePickerIO extends FilePicker {
     bool? allowCompression = true,
     bool allowMultiple = false,
     bool? withData = false,
+    int? maxSize = 999999999,
     bool? withReadStream = false,
     bool lockParentWindow = false,
   }) =>
@@ -40,6 +41,7 @@ class FilePickerIO extends FilePicker {
         allowedExtensions,
         onFileLoading,
         withData,
+        maxSize,
         withReadStream,
       );
 
@@ -71,6 +73,7 @@ class FilePickerIO extends FilePicker {
     List<String>? allowedExtensions,
     Function(FilePickerStatus)? onFileLoading,
     bool? withData,
+      int? maxSize,
     bool? withReadStream,
   ) async {
     final String type = describeEnum(fileType);
@@ -94,6 +97,7 @@ class FilePickerIO extends FilePicker {
         'allowedExtensions': allowedExtensions,
         'allowCompression': allowCompression,
         'withData': withData,
+        'maxSize': maxSize,
       });
 
       if (result == null) {

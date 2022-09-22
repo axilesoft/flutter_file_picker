@@ -23,6 +23,7 @@ class FilePickerWindows extends FilePicker {
     bool allowCompression = true,
     bool allowMultiple = false,
     bool withData = false,
+    int maxSize = 999999999,
     bool withReadStream = false,
     bool lockParentWindow = false,
   }) async {
